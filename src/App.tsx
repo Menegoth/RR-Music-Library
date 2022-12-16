@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import Gallery from './components/Gallery'
 import SearchBar from './components/SearchBar'
 
@@ -24,7 +24,7 @@ function App() {
   }
   }, [searchTerm])
 
-  const handleSearch = (e, term) => {
+  const handleSearch = (e: FormEvent<HTMLFormElement>, term: string): void => {
     e.preventDefault()
     setSearchTerm(term)
   }
